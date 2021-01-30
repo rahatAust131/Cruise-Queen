@@ -125,10 +125,18 @@ nav ul li a:hover, a.active{
     word-spacing: 5px;
     font-size: 17px;
 }
-.plus-minus-btn-style{
+.input-and-btn-container {
+    display: flex;
+    width: 120%;
+    align-items: center;
+}
+.plus-minus-btn-container {
+    width: 100%;
+}
+.plus-minus-btn-style {
     background-color: rgb(222, 255, 252);
     width: 40%;
-    font-size: 30px;
+    font-size: 27px;
     margin: 0 auto;
     padding: 3px;
     border: none;
