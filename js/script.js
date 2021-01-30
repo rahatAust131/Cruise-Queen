@@ -1,30 +1,42 @@
-// first-class-plus-button interaction
+// First-class-Plus-Button interaction
 const firstPlusBtn = document.getElementById('first-class-plus-btn');
 firstPlusBtn.addEventListener('click', function () {
   showCount('first-class-input', 'add');
   showAmount('first-class-input', 'economy-input');
 });
 
-// first-class-minus-btn interaction
+// First-class-Minus-Button interaction
 const firstMinusBtn = document.getElementById('first-class-minus-btn');
 firstMinusBtn.addEventListener('click', function () {
   showCount('first-class-input', 'subtract');
   showAmount('first-class-input', 'economy-input');
 });
 
-// economy-plus-btn interaction
+// Economy-Plus-Button interaction
 const economyPlusBtn = document.getElementById('economy-plus-btn');
 economyPlusBtn.addEventListener('click', function () {
   showCount('economy-input', 'add');
   showAmount('first-class-input', 'economy-input');
 });
 
-// economy-minus-btn interaction
+// Economy-Minus-Button interaction
 const economyMinusBtn = document.getElementById('economy-minus-btn');
 economyMinusBtn.addEventListener('click', function () {
   showCount('economy-input', 'subtract');
   showAmount('first-class-input', 'economy-input');
 });
+
+// Book-Now Button Interaction
+const bookNowBtn = document.getElementById('book-now-btn');
+bookNowBtn.addEventListener('click', function() {
+  showBookingInfo();
+});
+
+// Modal's Close Button Interaction
+const modalCloseBtn = document.getElementById('modal-close-btn');
+modalCloseBtn.addEventListener('click', function() {
+  initializeAllInputs();
+})
 
 // function to show count of tickets (in the input field)
 function showCount(id, task) {
@@ -87,4 +99,40 @@ function showAmount(id1, id2) {
   subtotalInStr.innerText = finalSubtotalCost;
   totalInStr.innerText = totalCost;
   taxInStr.innerText = tax;
+}
+// function to show Booking Info (show Info after clicking "Book Now" button)
+function showBookingInfo() {
+  const departurePlace = document.getElementById('departure-place').value;
+  document.getElementById('leaving-place').innerText = departurePlace;
+  
+  const returningPlace = document.getElementById('returning-place').value;
+  document.getElementById('entering-place').innerText = returningPlace;
+
+  const departureDate = document.getElementById('departure-date').value;
+  document.getElementById('leaving-date').innerText = departureDate;
+
+  const returningDate = document.getElementById('returning-date').value;
+  document.getElementById('entering-date').innerText = returningDate;
+
+  const firstClsTicket = document.getElementById('first-class-input').value;
+  document.getElementById('f-class-ticket').innerText = firstClsTicket;
+
+  const economyClsTicket = document.getElementById('economy-input').value;
+  document.getElementById('eco-class-ticket').innerText = economyClsTicket;
+
+  const totalCostOfTicket = document.getElementById('total-amount').innerText;
+  document.getElementById('total-cost-of-ticket').innerText = totalCostOfTicket;
+}
+
+// function to initialize all input values to 0 or Null
+function initializeAllInputs() {
+  document.getElementById('first-class-input').value = '0';
+  document.getElementById('economy-input').value = '0';
+  document.getElementById('subtotal-amount').innerText = '0';
+  document.getElementById('total-amount').innerText = '0';
+  document.getElementById('tax-amount').innerText = '0';
+  document.getElementById('departure-date').value = '';
+  document.getElementById('returning-date').value = '';
+  document.getElementById('departure-place').value = '';
+  document.getElementById('returning-place').value = '';
 }

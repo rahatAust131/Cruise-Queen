@@ -44,21 +44,21 @@
       <h3>Book Ocean Time</h3>
       <div class="input-group">
         <label for="">Flying From</label>
-        <input class="inp-style" type="text" name="" placeholder="Dhaka, Bangladesh">
+        <input id="departure-place" class="inp-style" type="text" name="" placeholder="Dhaka, Bangladesh">
       </div>
       <div class="input-group">
         <label for="">Flying To</label>
-        <input class="inp-style" type="text" name="" placeholder="New York, United States">
+        <input id="returning-place" class="inp-style" type="text" name="" placeholder="New York, United States">
       </div>
 
       <div class="inputs">
         <div class="input-group">
-          <label for="departure-date">Departure</label>
-          <input id="" class="inp-style" type="date" name="">
+          <label for="">Departure</label>
+          <input id="departure-date" class="inp-style" type="date" name="">
         </div>
         <div class="input-group">
           <label for="">Return</label>
-          <input id="return-date" class="inp-style" type="date" name="">
+          <input id="returning-date" class="inp-style" type="date" name="">
         </div>
       </div>
 
@@ -124,30 +124,40 @@
           </div>
         </div>
       </div>
-      <button class="btn-style" data-toggle="modal" data-target="#exampleModalCenter">
+      <button id="book-now-btn" class="btn-style" data-toggle="modal" data-target="#exampleModalCenter">
         Book Now
       </button>
   </main>
 
-  <!-- modal related code goes here -->
   <!-- Button trigger modal -->
   <!-- Modal -->
   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
+        <!-- modal header -->
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalCenterTitle">About Your Ticket</h5>
+          <h5 class="modal-title" id="exampleModalCenterTitle">Booking Info</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
+        <!-- Everything that's Gonna show up when Book Now Button Clicked -->
         <div class="modal-body bg-success">
-          <h2 class="text-center text-white">Congratulations! <i class="fas fa-flag"></i></h2>
+          <h2 class="text-center text-white">Congratulations!<i class="fas fa-flag"></i></h2>
           <p class="text-center text-white">You Have Successfully Booked Your Desired Ticket.</p>
+          <p class="text-center text-white">You Are Flying From : <span id="leaving-place">.</span> </p>
+          <p class="text-center text-white">You Are Flying To : <span id="entering-place">.</span> </p>
+          <p class="text-center text-white">Your Departure Date : <span id="leaving-date">.</span> </p>
+          <p class="text-center text-white">Your Returning Date : <span id="entering-date">.</span> </p>
+          <p class="text-center text-white">________You Have Booked________</p>
+          <p class="text-center text-white">First Class Ticket : <span id="f-class-ticket">.</span> </p>
+          <p class="text-center text-white">Economy Class Ticket : <span id="eco-class-ticket">.</span> </p>
+          <p class="text-center text-white">Your Total Cost : $<span id="total-cost-of-ticket">.</span> </p>
         </div>
+        <!-- modal footer -->
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button id="modal-close-btn" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
