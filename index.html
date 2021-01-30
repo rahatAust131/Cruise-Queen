@@ -10,7 +10,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap"
     rel="stylesheet">
   <!-- Stylesheet -->
+  <link rel="stylesheet" href="all.min.css">
+  <link rel="stylesheet" href="fontawesome.min.css">
   <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -50,12 +56,12 @@
 
       <div class="inputs">
         <div class="input-group">
-          <label" for="">Departure</label>
-            <input class="inp-style" type="date" name="">
+          <label for="departure-date">Departure</label>
+            <input id="" class="inp-style" type="date" name="">
         </div>
         <div class="input-group">
           <label for="">Return</label>
-          <input class="inp-style" type="date" name="">
+          <input id="return-date" class="inp-style" type="date" name="">
         </div>
       </div>
 
@@ -65,150 +71,104 @@
           <div class="input-and-btn-container">
             <input id="first-class-input" class="inp-style inp-width" type="number" name="" value="0">
             <div class="plus-minus-btn-container">
-              <button id="first-class-plus-btn" class="plus-minus-btn-style">+</button>
-              <button id="first-class-minus-btn" class="plus-minus-btn-style">-</button>
+              <button id="first-class-plus-btn" class="plus-minus-btn-style">
+                <i class="fas fa-plus-circle"></i>
+              </button>
+              <button id="first-class-minus-btn" class="plus-minus-btn-style">
+                <i class="fas fa-minus-circle"></i>
+              </button>
             </div>
           </div>
         </div>
       </div>
 
       <div class="input-group f-class">
-      <div>
-        <label for="economy-input">Economy ($100)</label>
-        <div class="input-and-btn-container">
-          <input id="economy-input" class="inp-style inp-width" type="number" name="" value="0">
-          <div class="plus-minus-btn-container">
-            <button id="economy-plus-btn" class="plus-minus-btn-style">+</button>
-            <button id="economy-minus-btn" class="plus-minus-btn-style">-</button>
+        <div>
+          <label for="economy-input">Economy ($100)</label>
+          <div class="input-and-btn-container">
+            <input id="economy-input" class="inp-style inp-width" type="number" name="" value="0">
+            <div class="plus-minus-btn-container">
+              <button id="economy-plus-btn" class="plus-minus-btn-style">
+                <i class="fas fa-plus-circle"></i>
+              </button>
+              <button id="economy-minus-btn" class="plus-minus-btn-style">
+                <i class="fas fa-minus-circle"></i>
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="calculations">
-      <div class="amount">
-        <div class="left">
-          <p>Subtotal</p>
+      <div class="calculations">
+        <div class="amount">
+          <div class="left">
+            <p>Subtotal</p>
+          </div>
+          <div class="right">
+            <p>$ <span id="subtotal-amount">0</span> </p>
+          </div>
         </div>
-        <div class="right">
-          <p>$ <span id="subtotal-amount">0</span> </p>
-        </div>
-      </div>
 
-      <div class="amount">
-        <div class="left">
-          <p>Charge 10% VAT</p>
+        <div class="amount">
+          <div class="left">
+            <p>Charge 10% VAT</p>
+          </div>
+          <div class="right">
+            <p>$<span id="tax-amount">0</span></p>
+          </div>
         </div>
-        <div class="right">
-          <p>$<span id="tax-amount">0</span></p>
+        <hr>
+        <div class="amount">
+          <div class="left">
+            <h4>Total</h4>
+          </div>
+          <div class="right">
+            <p>$<span id="total-amount">0</span></p>
+          </div>
         </div>
       </div>
-      <hr>
-      <div class="amount">
-        <div class="left">
-          <h4>Total</h4>
-        </div>
-        <div class="right">
-          <p>$<span id="total-amount">0</span></p>
-        </div>
-      </div>
-    </div>
-    <button class="btn-style">Book Now</button>
+      <button class="btn-style" data-toggle="modal" data-target="#exampleModalCenter">
+        Book Now
+      </button>
   </main>
 
-  <!-- JS codes Here -->
-  <script>
+  <!-- modal related code goes here -->
+  <!-- Button trigger modal -->
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">About Your Ticket</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body bg-success">
+          <h2 class="text-center text-white">Congratulations! <i class="fas fa-flag"></i></h2>
+          <p class="text-center text-white">You Have Successfully Booked Your Desired Ticket.</p>          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    // first-class-plus-button interaction
-    const firstPlusBtn = document.getElementById('first-class-plus-btn');
-    firstPlusBtn.addEventListener('click', function () {
-      showCount('first-class-input', 'add');
-      showAmount('first-class-input', 'economy-input');
-    });
+  <!-- JS link Here -->
+  <script src="script.js"></script>
 
-    // first-class-minus-btn interaction
-    const firstMinusBtn = document.getElementById('first-class-minus-btn');
-    firstMinusBtn.addEventListener('click', function () {
-      showCount('first-class-input', 'subtract');
-      showAmount('first-class-input', 'economy-input');
-    });
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
 
-    // economy-plus-btn interaction
-    const economyPlusBtn = document.getElementById('economy-plus-btn');
-    economyPlusBtn.addEventListener('click', function () {
-      showCount('economy-input', 'add');
-      showAmount('first-class-input', 'economy-input');
-    });
-
-    // economy-minus-btn interaction
-    const economyMinusBtn = document.getElementById('economy-minus-btn');
-    economyMinusBtn.addEventListener('click', function () {
-      showCount('economy-input', 'subtract');
-      showAmount('first-class-input', 'economy-input');
-    });
-
-    // function to show count of tickets (in the input field)
-    function showCount(id, task) {
-      const ticketInput = document.getElementById(id);
-      const ticketCount = parseInt(ticketInput.value);
-      let newTicketCount = 0;
-      if (task === 'add') {
-        newTicketCount = ticketCount + 1;
-      }
-      else {
-        // condition to handle negative or unexpected value
-        if (ticketCount > 0) {
-          newTicketCount = ticketCount - 1;
-        }
-      }
-      ticketInput.value = newTicketCount;
-    }
-
-    // function to show cost/amount of booking tickets (in the amount part)
-    function calculateAmount(id) {
-
-      let subTotalCost = 0;
-      const ticketInput = document.getElementById(id);
-      const ticketCount = parseInt(ticketInput.value);
-
-      // condition to handle negative or unexpected value
-      if (ticketCount > 0) {
-        if (id == 'first-class-input') {
-          // first-class tickets cost $150/ticket
-          subTotalCost = subTotalCost + 150 * ticketCount;
-        } else {
-          // non first-class tickets cost $100/ticket
-          subTotalCost = subTotalCost + 100 * ticketCount;
-        }
-      }
-      return subTotalCost;
-    }
-
-    function showAmount(id1, id2) {
-      // variable initialization (to store value & calculate cost)
-      let tax = 0.1;      
-      let totalCost = 0;      
-
-      // targeting $amounts by their relative IDs
-      const subtotalInStr = document.getElementById('subtotal-amount');
-      const totalInStr = document.getElementById('total-amount');
-      const taxInStr = document.getElementById('tax-amount');
-
-      let subtotalCost1 = calculateAmount(id1);
-      let subtotalCost2 = calculateAmount(id2);
-      let finalSubtotalCost = subtotalCost1 + subtotalCost2;
-      
-      // calculation of total cost
-      tax = finalSubtotalCost * tax;
-      totalCost = finalSubtotalCost + tax;
-
-      // showing the changed amounts in the website
-      subtotalInStr.innerText = finalSubtotalCost;
-      totalInStr.innerText = totalCost;
-      taxInStr.innerText = tax;
-    }
-
-  </script>
   <!--Thank You-->
 </body>
 
