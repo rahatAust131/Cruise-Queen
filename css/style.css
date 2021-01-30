@@ -8,7 +8,7 @@
 }
 body{
     font-family: 'Roboto', sans-serif;
-    background:url("images/ship.png");
+    background:url("../images/ship.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: scroll;
