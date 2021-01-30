@@ -4,6 +4,7 @@
     box-sizing: border-box;
     text-decoration: none;
     list-style-type: none;
+    transition: all  .5s ease-in;
 }
 body{
     font-family: 'Roboto', sans-serif;
@@ -96,27 +97,47 @@ nav ul li a:hover, a.active{
 .inp-width{
     min-width: 300px;
 }
-.plus-minus-btn{
-    color: #3352F2;
-    font-size: 30px;
-    padding: 2px;
-    margin: 10px 5px 0px 0px;
-    word-spacing: 20px;
+.plus-minus-btn-container{
+    display: flex;
+    width: 100%;
+    
 }
 .booking-form .inputs{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
 }
-.btn-style{
+.btn-style {
     display: block;
     width: 100%;
     padding: 10px;
     border-radius: 5px;
     border: none;
     color: #fff;
+    cursor: pointer;
     font-weight: 500;
     background-color:  #E33741;
+}
+.btn-style:hover {
+    background-color:  hsl(140, 94%, 87%);
+    color: rgb(0, 0, 0);
+    letter-spacing: 5px;
+    word-spacing: 5px;
+    font-size: 17px;
+}
+.plus-minus-btn-style{
+    background-color: rgb(222, 255, 252);
+    width: 40%;
+    font-size: 30px;
+    margin: 0 auto;
+    padding: 3px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.plus-minus-btn-style:hover {
+    background-color: rgb(204, 255, 103);
+    color: darkblue;
 }
 .amount{
     display: flex;
