@@ -1,2 +1,1 @@
-# live site link
-https://rahataust131.github.io/Cruise-Queen/
+# https://rahataust131.github.io/Cruise-Queen/
